@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        p {
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Random Github Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
-<html>
+<audio id="vineBoom" src="assets/vine-boom.mp3"></audio>
+    <label class="switch">
+      <input type="checkbox" id="mode-toggle" />
+      <span class="slider"></span>
+      <span class="switch-label" id="switch-label">Dark Mode</span>
+    </label>
+    <!-- ...your page content... -->
+
+    <script>
+      const toggleInput = document.getElementById('mode-toggle');
+      const body = document.body;
+      const switchLabel = document.getElementById('switch-label');
+
+      // Load mode from localStorage
+      let darkMode = localStorage.getItem('darkMode') === 'true';
+      toggleInput.checked = darkMode;
+      setMode(darkMode);
+
+      function setMode(isDark) {
+        if (isDark) {
+          body.classList.add('dark-mode');
+          switchLabel.textContent = 'Light Mode';
+        } else {
+          body.classList.remove('dark-mode');
+          switchLabel.textContent = 'Dark Mode';
+        }
+      }
+
+      toggleInput.addEventListener('change', () => {
+        darkMode = toggleInput.checked;
+        localStorage.setItem('darkMode', darkMode);
+        setMode(darkMode);
+      });
+    </script>
+    <script>
+  // ...existing code...
+
+  // Pop-in effect for all h1 and p elements
+  window.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('h1, p');
+    elements.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('pop-in');
+      }, i * 120); // stagger the animation
+    });
+  });
+</script>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+      h1, p {
+        opacity: 0; /* Start hidden */
+        transform: translateY(20px); /* Start slightly below */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+      }
+      .pop-in {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Move to original position */
+      }
+      .dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+    </style>
+    <script src="script.js"></script>
+</body>
+<body>
+    <h1>Hi And Welcome To</h1>
+    <p>----------------------------------------------------------------</p>
+    <h1>A</h1>
+    <h1>Random</h1>
+    <h1>Github</h1>
+    <h1>Website</h1>
+    <p>----------------------------------------------------------------</p>
+    <h1>Made With</h1>
+    <p>----------------------------------------------------------------</p>
+<h1>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="HTML Logo" style="height:2em;vertical-align:middle;margin-right:0.5em;">
+  <span class="html-orange">HTML</span>
+</h1>
+<h1>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="CSS Logo" style="height:2em;vertical-align:middle;margin-right:0.5em;">
+  <span class="css-blue">CSS</span>
+</h1>
+<h1>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="JavaScript Logo" style="height:2em;vertical-align:middle;margin-right:0.5em;">
+  <span class="js-yellow">JavaScript</span>
+</h1>
+<p>----------------------------------------------------------------</p>
+</html>
